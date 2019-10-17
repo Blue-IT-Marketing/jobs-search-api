@@ -46,7 +46,7 @@ const job_search = async (country,pageNum,what,where) => {
       sort_by : 'relevance'
   };
 
-  axios.get(req_url,{params : query_data}).then(response => {
+  await axios.get(req_url,{params : query_data}).then(response => {
     if (response.status === 200){
       return response.data;
     }
