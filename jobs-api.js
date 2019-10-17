@@ -30,19 +30,20 @@ const adzuna_base_url = "https://developer.adzuna.com";
   * @param {*} query_string  = what , where
   */
 const job_search = async (country,pageNum,what,where) => {
+
   const results = {status: true,payload:[],error:{}}
+
   const req_url = adzuna_base_url + `/jobs/${country}/search/${pageNum}`;
 
-  const query_data = {
-    
-    app_id : adzuna_app_id,
-    app_key : adzuna_key,
-    results_per_page : 20,
-    distance : 60,
-    what : what,
-    where : where,
-    max_days_old : 30,
-    sort_by : 'relevance'
+  const query_data = {    
+      app_id : adzuna_app_id,
+      app_key : adzuna_key,
+      results_per_page : 20,
+      distance : 60,
+      what : what,
+      where : where,
+      max_days_old : 30,
+      sort_by : 'relevance'
   };
 
   axios.get(req_url,{params : query_data}).then(response => {
