@@ -54,7 +54,7 @@ app.get(
     const where = req.params.where;
 
     jobs_api.search(country,pageNum,what,where).then(response => {
-        console.log(response);
+        
         res.status(200).json(response);
     });
   }

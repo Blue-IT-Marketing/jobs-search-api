@@ -51,7 +51,7 @@ const job_search = async (country,pageNum,what,where) => {
       return response.data;
     }
   }).then(jobs => {
-    console.log(jobs);
+    console.log('Jobs Responses',jobs);
     results.status = true;
     results.payload = [...jobs];
     results.error = {}
